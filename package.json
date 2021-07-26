@@ -1,0 +1,28 @@
+{
+  "name": "smatbot",
+  "version": "1.0.0",
+  "description": "A crud api with node js smatbot assesment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mandeep-kafle/crudapi.git"
+  },
+  "keywords": [
+    "CRUD"
+  ],
+  "author": "Mandeep",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mandeep-kafle/crudapi/issues"
+  },
+  "homepage": "https://github.com/mandeep-kafle/crudapi#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.12"
+  }
+}
