@@ -24,7 +24,8 @@ Contact.create = function (newEmp, result) {
     });           
 };
 Contact.findById = function (id, result) {
-    dbConn.query("Select first_name,last_name,email,phone from contacts where id = ? ", id, function (err, res) {      
+    let intId=parseInt(id);
+    dbConn.query("Select first_name,last_name,email,phone from contacts where id = ? ", intId, function (err, res) {      
         console.log("findbyid models");
         if(err) {
             console.log("error: ", err);
@@ -56,7 +57,7 @@ Contact.findByWord=function(word,result){
     })
 }
 Contact.findAll = function (result) {
-    dbConn.query("Select first_name,last_name,email,phone from contacts", function (err, res) {
+    dbConn.query("Select id, first_name,last_name,email,phone from contacts", function (err, res) {
         console.log("findall models");
         if(err) {
             console.log("error: ", err);
@@ -69,7 +70,7 @@ Contact.findAll = function (result) {
     });   
 };
 Contact.update = function(id, contact, result){
-  dbConn.query("UPDATE contacts SET first_name=?,last_name=?,email=?,phone=?, WHERE id = ?", [contact.first_name,contact.last_name,contact.email,contact.phone, id], function (err, res) {
+  dbConn.query("UPDATE contacts SET first_name=?,last_name=?,email=?,phone=?  where id = ? ", [contact.first_name,contact.last_name,contact.email,contact.phone, id], function (err, res) {
     console.log("update models");   
     if(err) {
             console.log("error: ", err);

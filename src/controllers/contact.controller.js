@@ -23,7 +23,7 @@ exports.create = function(req, res) {
         Contact.create(new_contact, function(err, contact) {
             if (err)
             res.send(err);
-            res.json({error:false,message:"Contact added successfully!",data:contact});
+            res.json({message:"Contact added successfully!",data:contact});
         });
     }
 };
@@ -47,7 +47,7 @@ exports.update = function(req, res) {
         Contact.update(req.params.id, new Contact(req.body), function(err, contact) {
             if (err)
             res.send(err);
-            res.json({ error:false, message: 'Contact successfully updated' });
+            res.json({message: 'Contact successfully updated' });
         });
     }
   
@@ -58,7 +58,7 @@ exports.delete = function(req, res) {
   Contact.delete( req.params.id, function(err, contact) {
     if (err)
     res.send(err);
-    res.json({ error:false, message: 'contact successfully deleted' });
+    res.json({ message: 'contact successfully deleted' });
   });
 };
 
