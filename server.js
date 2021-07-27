@@ -1,20 +1,19 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-// import express from 'express';
-// import bodyParser from 'body-parser';
-// create express app
+
 const app = express();
-// Setup server port
-const port = process.env.PORT || 5000;
-// parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }))
-// parse requests of content-type - application/json
-app.use(bodyParser.json())
-// define a root route
+
+const port = process.env.PORT || 9000;
+app.use(express.urlencoded())
+
+app.use(express.json())
+
 app.get('/', (req, res) => {
-  res.send("Hello Wod");
+  res.send("Hello World");
 });
-// listen for requests
+
+const contactRoutes = require('./src/routes/contact.routes')
+
+app.use('/contacts', contactRoutes)
 app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+  console.log(`Server is listening on port http://localhost:${port}`);
 });
