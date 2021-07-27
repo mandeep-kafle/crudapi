@@ -11,7 +11,7 @@ router.get('/:id', contactController.findById);
 
 router.put('/:id', contactController.update);
 
-
 router.delete('/:id', contactController.delete);
 
+router.get('/search/:word',contactController.findByWord);
 module.exports = router;
